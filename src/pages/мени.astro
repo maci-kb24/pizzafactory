@@ -1,0 +1,18 @@
+---
+import { menu } from '../data/menu'
+import MenuSection from '../components/MenuSection.astro'
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const { pageTitle } = Astro.props;
+
+---
+
+<BaseLayout pageTitle={pageTitle || "Menu"}>
+
+{menu.map(section => (
+  <MenuSection
+    title={section.category}
+    items={section.items}
+  />
+))}
+</BaseLayout>

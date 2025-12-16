@@ -1,0 +1,41 @@
+---
+const {
+  title,
+  backgroundImage,
+} = Astro.props
+---
+
+<section
+  class="hero"
+  style={`background-image: url(${backgroundImage});`}
+>
+  <div class="hero__overlay" />
+  <div class="hero__content">
+    <h1>Taste for Everyone</h1>
+    <p>Delicious pizzas made with fresh ingredients and a whole lot of love.</p>
+    <a href="/menu" class="btn btn--primary">Explore Our Menu</a>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+  }
+
+  .hero__content {
+    color: white;
+  }
+</style>
