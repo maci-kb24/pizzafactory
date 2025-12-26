@@ -1,32 +1,35 @@
-export const menu = [
+export const menuItems = [
   {
-    category: 'Pizza',
+    category: 'Пици',
     items: [
       {
         id: 1,
-        name: 'Маргарита пица',
+        name: 'Маргарита',
         ingredients: 'Кечап, кашкавал, оригано',
-        price: 600,
+        price: 320,
         currency: 'ден.',
+        image: '/margarita.jpg',
       },
       {
         id: 2,
-        name: 'Pepperoni',
-        ingredients: 'Tomato, mozzarella, pepperoni',
-        price: 750,
+        name: 'Везувио',
+        ingredients: 'Кечап, кашкавал, шунка, оригано',
+        price: 340,
         currency: 'ден.',
+        image: '/vesuvio.jpg',
       },
       {
         id: 3,
-        name: 'Hawaiian',
-        ingredients: 'Tomato, mozzarella, ham, pineapple',
-        price: 800,
+        name: 'Капричоза',
+        ingredients: 'Кечап, кашкавал, шунка, печурки, оригано',
+        price: 360,
         currency: 'ден.',
+        image: '/capricciosa.jpg',
       },
     ],
   },
   {
-    category: 'Drinks',
+    category: 'Пијалоци',
     items: [
       {
         id: 3,
@@ -50,7 +53,7 @@ export const menu = [
     ],
   },
   {
-    category: 'Desserts',
+    category: 'Десерти',
     items: [
       {
         id: 6,

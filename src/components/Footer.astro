@@ -1,18 +1,183 @@
----
+<footer class="footer">
+  <div class="overlay"></div>
 
-import Social from './Social.astro';
----
+  <div class="container">
+    <!-- Top section -->
+    <div class="top">
+      <!-- Opening hours -->
+      <div class="column">
+        <h4>Работно време</h4>
+        <p>Петок - Сабота: 9aм–1pм</p>
+        <p>Понеделник - Четврток: 9aм–00ам</p>
+        <p>Недела: 9aм–00ам</p>
+      </div>
 
-<style>
-  footer {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-</style>
+      <!-- Logo + address -->
+      <div class="column center">
+        <div class="logo">
+          <!-- <span class="icon">🍕</span> -->
+          <span class="text">Pizza Factory</span>
+        </div>
+        <address>
+          Булевар Видое Смилевски Бато 3/2
+        </address>
+      </div>
 
-<footer>
-  <Social platform="twitter" username="astrodotbuild" />
-  <Social platform="github" username="withastro" />
-  <Social platform="youtube" username="astrodotbuild" />
+      <!-- Social -->
+      <div class="column">
+        <h4>Поврзи се со нас</h4>
+        <div class="social">
+          <a href="https://www.facebook.com/pizzafactory123/" aria-label="Facebook">f</a>
+          <a href="https://korpa.mk/partner/pizza-factory" aria-label="Yelp">★</a>
+          <a href="https://wolt.com/mk/mkd/skopje/restaurant/pizza-factory12?srsltid=AfmBOopO0Z70bfolv1G5lhKZ1wts0p-YsGIx5JUbT4GugRHJlQz0VQOW" aria-label="Tripadvisor">◎</a>
+          <a href="https://www.instagram.com/__pizzafactory/" aria-label="Instagram">◎</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <hr />
+
+    <!-- Bottom section -->
+    <div class="bottom">
+      <nav>
+        <a href="/">Почетна</a>
+        <a href="/мени">Мени</a>
+        <a href="/резервација">Резервација</a>
+      </nav>
+
+      <p>© 2026 Pizza Factory - Сите права се задржани.</p>
+    </div>
+  </div>
+
+ 
 </footer>
+
+ <style>
+    .footer {
+      position: relative;
+      background: url('/footer_bg.jpg') center / cover no-repeat;
+      color: #fff;
+      padding: 5rem 0 2rem;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Top layout */
+    .top {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      text-align: center;
+    }
+
+    .column h4 {
+      font-size: 1.1rem;
+      margin-bottom: 1.25rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .column p,
+    address {
+      color: #ccc;
+      line-height: 1.8;
+      font-style: normal;
+    }
+
+    /* Logo */
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .logo .text {
+      font-family: cursive;
+    }
+
+    /* Social */
+    .social {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social a {
+      width: 40px;
+      height: 40px;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #fff;
+      transition: background 0.3s;
+    }
+
+    .social a:hover {
+      background: #B1C3B8;
+      color: #000;
+      border-color: #B1C3B8;
+    }
+
+    /* Divider */
+    hr {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      margin: 3rem 0 2rem;
+    }
+
+    /* Bottom */
+    .bottom {
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    nav a:hover {
+      color: #B1C3B8;
+    }
+
+    .bottom p {
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .top {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>

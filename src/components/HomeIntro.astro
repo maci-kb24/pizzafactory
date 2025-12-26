@@ -1,0 +1,39 @@
+---
+const { title, text, image } = Astro.props;
+---
+
+<section>
+  <div class="home-intro-container">
+    <div class="home-intro-image">
+      <img src={image} width="100%" alt={title} />
+    </div>
+
+    <div class="home-intro-text">
+      <h2>{title}</h2>
+      <p>{text}</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .home-intro-container {
+    display: flex;
+    gap: 3rem;
+  }
+  .home-intro-image, .home-intro-text {
+    flex: 1;
+  }
+  .home-intro-text h2 {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+  @media (max-width: 768px) {
+    .home-intro-container {
+      flex-direction: column;
+    }
+  }
+  .home-intro-text {
+    padding-top:100px;
+  }
+</style>

@@ -1,0 +1,67 @@
+---
+import Container from "./Container.astro";
+const { hours, address, telephone } = Astro.props;
+import { Phone, LocateFixed, Clock5,Facebook, Instagram } from "@lucide/astro";
+---
+
+<section>
+  <div class="opening-hours-container">
+    <div class="opening-hours">
+      <p><Phone color="#B1C3B8" />{telephone}</p>
+      <p><LocateFixed color="#B1C3B8" />{address}</p>
+      <p><Clock5 color="#B1C3B8" />{hours}</p>
+    </div>
+    <div class="social">
+      <ul style="list-style:none; display:flex; gap:1rem; padding:0; margin:0;">
+        <li>
+          <a
+            href="https://www.facebook.com/pizzafactorymk"
+            target="_blank"
+            rel="noopener noreferrer"><Facebook color="#ffffff" /></a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/pizzafactorymk/"
+            target="_blank"
+            rel="noopener noreferrer"><Instagram color="#ffffff" /></a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .opening-hours-container {
+    display: flex;
+    background-color: #b1c3b8;
+  }
+
+  .opening-hours {
+    display: flex;
+    gap: 1rem;
+    flex: 0.7;
+    background-color: #000;
+    padding:30px 0px 30px 48px;
+    justify-content: center;
+  }
+  .opening-hours p {
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: fit-content;
+    font-size: medium;
+  }
+
+  .social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex: 0.3;
+    padding-left:48px;
+    padding:42px;
+  }
+</style>

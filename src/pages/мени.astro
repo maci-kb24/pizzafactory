@@ -1,18 +1,22 @@
 ---
-import { menu } from '../data/menu'
-import MenuSection from '../components/MenuSection.astro'
-import BaseLayout from '../layouts/BaseLayout.astro';
-
-const { pageTitle } = Astro.props;
-
+import MenuGrid from "../components//menu/MenuGrid.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
 ---
 
-<BaseLayout pageTitle={pageTitle || "Menu"}>
-
-{menu.map(section => (
-  <MenuSection
-    title={section.category}
-    items={section.items}
+<BaseLayout title="Pizza Factory Menu">
+  <Hero
+    subtitle="More flavor for less"
+    title="Нашето Мени"
+    backgroundImage="/bg-reservation.jpg"
   />
-))}
+  <MenuGrid title="Нашето Мени" />
 </BaseLayout>
+
+<style>
+  .menu {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+    }
+</style>

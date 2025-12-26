@@ -1,0 +1,137 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import Container from "../components/Container.astro";
+import PromoSplit from "../components/PromoSplit.astro";
+---
+
+<BaseLayout title="Pizza Factory Резервација">
+  <Hero
+    class="reservation-hero"
+    title="Направи  Резервација"
+    backgroundImage="/hero-menu.jpg"
+  />
+  <section class="reservation">
+    <Container>
+      <div class="reservation-content">
+        <div class="left-column">
+          <div class="contact-info">
+            <h2>Нашата адреса</h2>
+            <p>
+              Булевар Видое Смилевски Бато 3/2
+            </p>
+          </div>
+          <div class="reservation-info">
+            <h2>Телефон за резервации</h2>
+            <p>
+              071 445 448
+            </p>
+          </div>
+        </div>
+        <div class="right-column">
+          <form action="https://formspree.io/f/xjgbdlrn" method="post" class="reservation-form">
+            <label for="name">Име</label><br />
+            <input type="text" id="name" name="name" required /><br /><br />
+            <!-- <label for="email">Е-пошта</label><br />
+            <input type="email" id="email" name="email" required /><br /><br /> -->
+            <label for="phone">Телефон</label><br />
+            <input type="tel" id="phone" name="phone" required /><br /><br />
+            <label for="reservation-date">Дата на резервација</label><br />
+            <input
+              type="date"
+              id="reservation-date"
+              name="reservation-date"
+              required
+            /><br /><br />
+            <label for="reservation-time">Време на резервација</label><br />
+            <input
+              type="time"
+              id="reservation-time"
+              name="reservation-time"
+              required
+            /><br /><br />
+            <label for="guests">Број на гости</label><br />
+            <input
+              type="number"
+              id="guests"
+              name="guests"
+              min="1"
+              required
+            /><br /><br />
+            <label for="requests">Специјални барања</label><br />
+            <textarea
+              rows="4"
+              cols="50"
+              style="resize: none;"
+              id="requests"
+              name="requests"
+              placeholder="Доколку имате специјални барања"
+            /><br /><br />
+            <button type="submit">Испрати</button>
+          </form>
+        </div>
+      </div>
+      <PromoSplit
+        image="/hero-menu.jpg"
+        pizzaBg="/pizza-bg.png"
+        title="Достапна достава во реон Аеродром"
+        headline="Уживајте во домашната атмосфера"
+        description="Резервирајте маса во нашиот ресторан"
+        buttonText="Погледни мени за достава"
+        buttonHref="/мени"
+      />
+    </Container>
+  </section>
+</BaseLayout>
+
+<style>
+  .menu {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+  }
+  .reservation-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    margin: 7rem 0rem;
+  }
+  .left-column {
+    flex: 0.3;
+  }
+  .right-column {
+    flex: 0.7;
+  }
+  .contact-info {
+    margin-bottom: 2rem;
+  }
+  .reservation-info {
+    margin-bottom: 2rem;
+  }
+  .reservation-form {
+    background-color: #f8f8f8;
+    padding: 2rem;
+    border-radius: 6px;
+  }
+  form label {
+    font-weight: bold;
+  }
+  form input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  form button {
+    background-color: #111;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+  }
+  form button:hover {
+    background-color: #B1C3B8;
+  }
+</style>

@@ -6,9 +6,7 @@
   <ul class="navigation">
     <li class="nav-links"><a href="/">Почетна</a></li>
     <li class="nav-links"><a href="/мени/">Нашето Мени</a></li>
-    <li class="nav-links"><a href="/за-нас/">За нас</a></li>
-    <li class="nav-links"><a href="/reservation/">Резервација</a></li>
-    <li class="nav-links"><a href="/blog/">Блог</a></li>
+    <li class="nav-links"><a href="/резервација/">Резервација</a></li>
   </ul>
 </nav>
 
@@ -19,6 +17,8 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    background-color: transparent;
   }
 
   .nav-links {
@@ -35,12 +35,13 @@
     font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
-    color: white;
+    color: #fff;
   }
 
   .nav-links a:hover,
   .nav-links a:focus {
-    background-color: #ff9776;
+    background-color: #B1C3B8;
+    color: #000;
   }
 
   :has(.menu[aria-expanded="true"]) .nav-links {
@@ -70,12 +71,6 @@
     gap: 1rem;
     margin: 0;
     padding: 0;
-  }
-
-  .navigation a {
-    text-decoration: none;
-    color: inherit;
-    font-weight: 600;
   }
 
   .navigation a:hover {

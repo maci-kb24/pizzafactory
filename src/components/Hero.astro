@@ -2,6 +2,8 @@
 const {
   title,
   backgroundImage,
+  menuTitle,
+  subtitle
 } = Astro.props
 ---
 
@@ -11,9 +13,9 @@ const {
 >
   <div class="hero__overlay" />
   <div class="hero__content">
-    <h1>Taste for Everyone</h1>
-    <p>Delicious pizzas made with fresh ingredients and a whole lot of love.</p>
-    <a href="/menu" class="btn btn--primary">Explore Our Menu</a>
+    {subtitle && <h2 class="hero__subtitle">{subtitle}</h2>}
+    <h1 class="hero__title">{title}</h1>
+    <a href="/мени" class="btn btn--primary">{menuTitle}</a>
   </div>
 </section>
 
@@ -25,7 +27,7 @@ const {
     background-size: cover;
     background-position: center;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
   }
 
@@ -37,5 +39,15 @@ const {
 
   .hero__content {
     color: white;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .hero__title {
+    font-size: 110px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    padding: 0 4rem;
   }
 </style>

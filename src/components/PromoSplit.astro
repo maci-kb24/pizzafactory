@@ -1,0 +1,124 @@
+---
+
+interface Props {
+  image: string
+  pizzaBg: string
+  headline: string
+  title: string
+  description: string
+  buttonText: string
+  buttonHref: string
+}
+
+const {
+  image,
+  pizzaBg,
+  headline,
+  title,
+  description,
+  buttonText,
+  buttonHref
+} = Astro.props
+---
+<section class="promo">
+  <div class="promo__image" style={`background-image: url(${image})`} />
+  <div class="promo__overlay" style={`background-image: url(${pizzaBg})`} />
+
+  <div class="promo__content">
+    <span class="promo__headline">{headline}</span>
+    <h2 class="promo__title">{title}</h2>
+    <p class="promo__description">{description}</p>
+
+    <a href={buttonHref} class="promo__button">
+      {buttonText}
+    </a>
+  </div>
+</section>
+
+<style>
+.promo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 6rem;
+}
+
+.promo__image {
+  background-size: cover;
+  background-position: center;
+}
+
+.promo__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  opacity: 0.8;
+  background-size: auto;
+}
+
+.promo__content {
+  background: #0e0e0e;
+  color: #fff;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.promo__headline {
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.promo__title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+.promo__description {
+  max-width: 480px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.promo__button {
+  margin-top: 2rem;
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border: 1px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  width: fit-content;
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+
+.promo__button:hover {
+  background: #B1C3B8;
+  color: #000;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .promo {
+    grid-template-columns: 1fr;
+  }
+
+  .promo__content {
+    padding: 2.5rem;
+  }
+
+  .promo__title {
+    font-size: 2.2rem;
+  }
+}
+</style>
