@@ -11,30 +11,53 @@ const { pageTitle } = Astro.props;
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <Hero subtitle="Повеќе вкус за помалку" title="Вкус за секого" menuTitle="Мени" backgroundImage="/bg-cover.jpg" />
-    <OpeningHours
-      hours="Пон – Нед: 9:00 – 00:00"
-      address="Булевар В.С.Бато 3/2, 1000 Скопје"
-      telephone="071 445 448"
-    />
-    <HomeIntro
-      title="Welcome to Pizza Factory"
-      text="On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word and and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their."
-      image="/left-image-home.webp"
-    />
-    <MenuHighlights
-      items={[
-        { name: "Margherita", description: "Tomato & mozzarella", price: 6 },
-        {
-          name: "Pepperoni",
-          description: "Mozzarella & pepperoni",
-          price: 7.5,
-        },
-      ]}
-    />
-    <CTA
-      title="Контактирајте не"
-    />
+  <Hero
+    subtitle="Повеќе вкус за помалку"
+    title="Вкус за секого"
+    menuTitle="Мени"
+    backgroundImage="/bg-cover.jpg"
+  />
+  <OpeningHours
+    hours="Пон – Нед: 9:00 – 00:00"
+    address="Булевар В.С.Бато 3/2, 1000 Скопје"
+    telephone="071 445 448"
+  />
+  <HomeIntro
+    title="Welcome to Pizza Factory"
+    text="On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word and and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their."
+    image="/left-image-home.webp"
+  />
+  <MenuHighlights
+    items={[
+      { name: "Маргарита", description: "Tomato & mozzarella", price: 6, image: "/margarita.jpg" },
+      {
+        name: "Пеперони",
+        description: "Моцарела & пеперони",
+        price: 150,
+        image: "/margarita.jpg",
+      },
+      {
+        name: "Вегетаријанска",
+        description: "Печурки, пиперки, кромид & маслинки",
+        price: 200,
+        image: "/margarita.jpg",
+      },
+      { name: "Хавајска", description: "Шунка & ананас", price: 180, image: "/margarita.jpg" },
+      {
+        name: "Четири Сира",
+        description: "Моцарела, пармезан, горгонзола & фета",
+        price: 220,
+        image: "/margarita.jpg",
+      },
+      {
+        name: "Мексиканска",
+        description: "Пикантна салама, пиперки & лук",
+        price: 190,
+        image: "/margarita.jpg",
+      },
+    ]}
+  />
+  <CTA title="Контактирајте не" />
 
   <script>
     import "../scripts/menu.js";

@@ -5,25 +5,23 @@ const { title, text } = Astro.props;
 
 <section class="cta-container">
   <div class="cta-content">
-    <div>
+    <div class="map-container">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2965.8321977774335!2d21.4726824!3d41.9824124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135415195e5541af%3A0xca64f803d0a72678!2sPizza%20Factory!5e0!3m2!1sen!2smk!4v1766155883370!5m2!1sen!2smk"
         width="100%"
-        height="400px"
+        height="450px"
         style="border:0;"
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-    <div>
-      <h2>{title}</h2>
+    <div class="contact-form-container">
+      <h2 class="contact-title">{title}</h2>
       <form action="" method="post" name="contact-form" class="contact-form">
         <label for="name">Име</label><br />
         <input type="text" id="name" name="name" required /><br /><br />
-        <label for="email">Е-пошта</label><br />
-        <input type="email" id="email" name="email" required /><br /><br />
         <label for="message">Порака</label><br />
-        <textarea id="message" name="message" rows="4" required></textarea
+        <textarea id="message" name="message" rows="10" cols="70" required></textarea
         ><br /><br />
         <button type="submit">Испрати</button>
       </form>
@@ -46,12 +44,12 @@ const { title, text } = Astro.props;
   }
   .cta-content > div {
     flex: 1 1 300px;
-    min-height: 300px;
+    /* min-height: 400px; */
   }
-  .cta-content h2 {
+  .contact-form-container h2 {
     margin-bottom: 1rem;
   }
-  .cta-content p {
+  .contact-form-container p {
     margin-bottom: 1.5rem;
   }
   a {
@@ -63,7 +61,42 @@ const { title, text } = Astro.props;
     border-radius: 6px;
     text-decoration: none;
   }
+  a:hover {
+    background: #B1C3B8;
+  }
+  .contact-title {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .contact-form-container {
+    padding:4rem 0rem;
+    margin: 0 auto;
+  }
+  .contact-form {
+    background-color: #f8f8f8;
+    padding: 2rem;
+    border-radius: 6px;
+  }
   .contact-form label {
     font-weight: bold;
+  }
+  .contact-form input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  form button {
+    background-color: #111;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    margin-top:2rem;
+  }
+  form button:hover {
+    background-color: #B1C3B8;
   }
 </style>

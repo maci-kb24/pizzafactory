@@ -6,6 +6,8 @@ html {
 body {
   width: 100%;
   line-height: 1.5;
+  background: url('/public/bg_4.jpg') no-repeat fixed;
+  background-size: cover;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
