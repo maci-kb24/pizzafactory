@@ -1,9 +1,10 @@
 ---
+import { Image } from 'astro:assets';
 ---
 
 <div class="logo">
   <a href="/">
-    <img src="/pizzafactory_logo.png" alt="Pizza Factory logo" />
+    <Image src={import('/src/assets/images/pizzafactory_logo.png')} alt="Pizza Factory logo" />
   </a>
 </div>
 

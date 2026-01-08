@@ -6,7 +6,7 @@ html {
 body {
   width: 100%;
   line-height: 1.5;
-  background: url('/public/bg_4.jpg') no-repeat fixed;
+  background: url('/src/assets/images/bg_4.jpg') no-repeat fixed;
   background-size: cover;
 }
 

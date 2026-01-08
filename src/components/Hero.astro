@@ -2,7 +2,6 @@
 const {
   title,
   backgroundImage,
-  menuTitle,
   subtitle
 } = Astro.props
 ---
@@ -15,7 +14,6 @@ const {
   <div class="hero__content">
     {subtitle && <h2 class="hero__subtitle">{subtitle}</h2>}
     <h1 class="hero__title">{title}</h1>
-    <a href="/мени" class="btn btn--primary">{menuTitle}</a>
   </div>
 </section>
 

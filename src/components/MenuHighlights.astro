@@ -3,9 +3,8 @@ import Container from "./Container.astro";
 const { items = [] } = Astro.props;
 ---
 
-<section>
-  <h2>Мени</h2>
-  <div class="grid">
+<section class="menu-highlights">
+  <div class="menu-grid">
     {
       items.map(
         (item: {
@@ -14,29 +13,33 @@ const { items = [] } = Astro.props;
           price: string | number;
           image: string;
         }) => (
-          <article>
-            <div class="bg-img" style={`width: 100%; height: 200px; overflow: hidden; background-size: cover; background-position: center;background-repeat: no-repeat; background-image: url('${item.image}');`}>
-              {/* <img src={item.image} alt={item.name} width="100%" height="100%" /> */}
+          <article class="menu-item">
+            <div
+              class="bg-img"
+              style={`width: 100%; height: 200px; overflow: hidden; background-size: cover; background-position: center;background-repeat: no-repeat; background-image: url('${item.image}');`}
+            >
             </div>
 
-            <div>
-              <h3>{item.name}</h3>
-              <p>{item.description}</p>
-              <strong>{item.price} ден.</strong>
+            <div class="menu-content">
+              <h3 class="menu-title">{item.name}</h3>
+              <p class="menu-description">{item.description}</p>
+              <strong class="menu-price">{item.price} МКД</strong>
             </div>
           </article>
         )
       )
     }
   </div>
-  <a href="/menu">Види Мени</a>
+  <div class="cta-link">
+    <a href="/menu">Види Мени</a>
+  </div>
 </section>
 
 <style>
-  .grid {
-    /* display: grid; */
-    /* grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); */
-    /* gap: 2rem; */
+  .menu-highlights {
+    padding: 2rem 0;
+  }
+  .menu-grid {
     margin: 2rem 0;
     display: flex;
     flex-wrap: wrap;
@@ -44,16 +47,46 @@ const { items = [] } = Astro.props;
   }
 
   article {
-    flex: 0 0 33.33333%;
+    flex: 1 1 calc(33.333% - 1rem);
     display: flex;
     background: rgba(0, 0, 0, 0.2);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
   }
-  article div:first-child {
+  article .bg-img {
     flex: 0.5;
   }
-  article div:last-child {
+  article .menu-content {
     flex: 0.5;
-    padding: 1rem;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.2);
+  }
+  .menu-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  .menu-description {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color:gray;
+  }
+  .menu-price {
+    font-size: 1.1rem;
+    color: #B1C3B8;
+  }
+  .cta-link {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .cta-link a {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #B1C3B8;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+  .cta-link a:hover {
+    background: #94A89F;
   }
 </style>

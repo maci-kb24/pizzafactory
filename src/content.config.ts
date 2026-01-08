@@ -9,7 +9,6 @@ import { z } from 'astro/zod';
 
 // 4. Define your collection(s)
 const blog = defineCollection({ /* ... */ });
-const dogs = defineCollection({ /* ... */ });
 
 // 5. Export a single `collections` object to register your collection(s)
-export const collections = { blog,  };
+export const collections = { blog};
