@@ -1,6 +1,6 @@
 ---
-import Container from "./Container.astro";
 const { items = [] } = Astro.props;
+import { Image } from 'astro:assets';
 ---
 
 <section class="menu-highlights">
@@ -16,10 +16,10 @@ const { items = [] } = Astro.props;
           <article class="menu-item">
             <div
               class="bg-img"
-              style={`width: 100%; height: 200px; overflow: hidden; background-size: cover; background-position: center;background-repeat: no-repeat; background-image: url('${item.image}');`}
+              
             >
+              <img src={item.image} alt={item.name}  />
             </div>
-
             <div class="menu-content">
               <h3 class="menu-title">{item.name}</h3>
               <p class="menu-description">{item.description}</p>
@@ -41,22 +41,32 @@ const { items = [] } = Astro.props;
   }
   .menu-grid {
     margin: 2rem 0;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     color: #fff;
+  }
+  @media screen {
+    
   }
 
   article {
-    flex: 1 1 calc(33.333% - 1rem);
     display: flex;
     background: rgba(0, 0, 0, 0.2);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
   }
   article .bg-img {
-    flex: 0.5;
+    flex: 1;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  article .bg-img img {
+    object-fit: cover;
+    display: block;
+    width: 100%;
+    height: 100%;
   }
   article .menu-content {
-    flex: 0.5;
+    flex: 1;
     padding: 1.5rem;
     background: rgba(0, 0, 0, 0.2);
   }

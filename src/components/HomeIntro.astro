@@ -18,15 +18,19 @@ const { title, text, image } = Astro.props;
 <style>
   .home-intro-container {
     display: flex;
-    gap: 3rem;
   }
   .home-intro-image, .home-intro-text {
     flex: 1;
   }
   .home-intro-text h2 {
     margin-bottom: 1rem;
-    font-size: 3rem;
+    font-size: 2rem;
     text-transform: uppercase;
+    color: white;
+  }
+  .home-intro-text p {
+    line-height: 1.6;
+    color: #ddd;
   }
   @media (max-width: 768px) {
     .home-intro-container {
@@ -34,6 +38,6 @@ const { title, text, image } = Astro.props;
     }
   }
   .home-intro-text {
-    padding-top:100px;
+    padding: 5rem 3rem 0rem 3rem;
   }
 </style>
