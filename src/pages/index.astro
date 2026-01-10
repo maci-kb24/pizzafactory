@@ -5,6 +5,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import MenuHighlights from "../components/MenuHighlights.astro";
 import OpeningHours from "../components/OpeningHours.astro";
 import CTA from "../components/CTA.astro";
+import pizzafactorypizza from "./src/assets/images/pizzafactorypizza.jpg";
+import makedonska from "./src/assets/images/makedonska.jpg";
+import meksikana from "./src/assets/images/meksikana.jpg";
+import formaggi from "./src/assets/images/4formaggi.jpg";
+import margarita from "./src/assets/images/margarita.jpg";
+import capricciosa from "./src/assets/images/capricciosa.jpg";
 import "../styles/global.css";
 
 const { pageTitle } = Astro.props;
@@ -32,37 +38,37 @@ const { pageTitle } = Astro.props;
         name: "Pizza Factory Пица",
         description: "Моцарела, говедски пршут, рукола, шери, домати, пармезан, оригано",
         price: 440,
-        image: "src/assets/images/pizzafactorypizza.jpg",
+        image: pizzafactorypizza,
       },
       {
         name: "Македонска Пица",
         description: "Кечап, кашкавал, домати, пиперка, сирење, маслинки, пршута",
         price: 390,
-        image: "src/assets/images/makedonska.jpg",
+        image: makedonska,
       },
       {
         name: "Мексикана Пица",
         description: "Кечап, кашкавал, зачинето пилешко, кулен, чили, оригано",
         price: 420,
-        image: "src/assets/images/meksikana.jpg",
+        image: meksikana,
       },
       {
         name: "Кватро Формаџи Пица",
         description: "Кечап, кашкавал, моцарела, горгонзола, пармезан, оригано",
         price: 430,
-        image: "src/assets/images/4formaggi.jpg",
+        image: formaggi,
       },
       {
         name: "Маргарита",
         description: "Кечап, кашкавал, оригано",
         price: 320,
-        image: "src/assets/images/margarita.jpg",
+        image: margarita,
       },
       {
         name: "Капричоза Пица",
         description: "Кечап, кашкавал, шунка, печурки, оригано",
         price: 360,
-        image: "src/assets/images/capricciosa.jpg",
+        image: capricciosa,
       },
     ]}
   />
