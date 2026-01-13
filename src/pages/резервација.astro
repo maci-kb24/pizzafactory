@@ -3,13 +3,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import Container from "../components/Container.astro";
 import PromoSplit from "../components/PromoSplit.astro";
+import heroBg from "../assets/images/hero-menu.jpg";
 ---
 
 <BaseLayout title="Pizza Factory Резервација">
   <Hero
     class="reservation-hero"
     title="Направи  Резервација"
-    backgroundImage="../src/assets/images/hero-menu.jpg"
+    image={heroBg}
   />
   <section class="reservation">
     <Container>

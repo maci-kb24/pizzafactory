@@ -1,3 +1,7 @@
+import margarita from '../assets/images/margarita.jpg';
+import vesuvio from '../assets/images/vesuvio.jpg';
+import capricciosa from '../assets/images/capricciosa.jpg';
+
 export const menuItems = [
   {
     category: 'Пици',
@@ -8,7 +12,7 @@ export const menuItems = [
         ingredients: 'Кечап, кашкавал, оригано',
         price: 320,
         currency: 'ден.',
-        image: '/margarita.jpg',
+        image: margarita,
       },
       {
         id: 2,
@@ -16,7 +20,7 @@ export const menuItems = [
         ingredients: 'Кечап, кашкавал, шунка, оригано',
         price: 340,
         currency: 'ден.',
-        image: '/vesuvio.jpg',
+        image: vesuvio,
       },
       {
         id: 3,
@@ -24,7 +28,7 @@ export const menuItems = [
         ingredients: 'Кечап, кашкавал, шунка, печурки, оригано',
         price: 360,
         currency: 'ден.',
-        image: '/capricciosa.jpg',
+        image: capricciosa,
       },
     ],
   },

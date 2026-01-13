@@ -11,6 +11,8 @@ import meksikana from "./src/assets/images/meksikana.jpg";
 import formaggi from "./src/assets/images/4formaggi.jpg";
 import margarita from "./src/assets/images/margarita.jpg";
 import capricciosa from "./src/assets/images/capricciosa.jpg";
+import homeintroimg from "./src/assets/images/left-image-home.webp";
+import homeBg from "../assets/images/bg-cover.jpg";
 import "../styles/global.css";
 
 const { pageTitle } = Astro.props;
@@ -20,7 +22,7 @@ const { pageTitle } = Astro.props;
   <Hero
     subtitle="Повеќе вкус за помалку"
     title="Вкус за секого"
-    backgroundImage="src/assets/images/bg-cover.jpg"
+    image={homeBg}
   />
   <OpeningHours
     hours="Пон – Нед: 9:00 – 00:00"
@@ -30,7 +32,7 @@ const { pageTitle } = Astro.props;
   <HomeIntro
     title="Welcome to Pizza Factory"
     text="On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word and and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their."
-    image="src/assets/images/left-image-home.webp"
+    image={homeintroimg}  
   />
   <MenuHighlights
     items={[

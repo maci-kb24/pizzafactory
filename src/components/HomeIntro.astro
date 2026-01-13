@@ -1,13 +1,14 @@
 ---
-const { title, text, image } = Astro.props;
+const { title, text } = Astro.props;
+import homeintro from "../assets/images/left-image-home.webp"; 
+import { Image } from "astro:assets"; 
 ---
 
 <section>
   <div class="home-intro-container">
     <div class="home-intro-image">
-      <img src={image} width="100%" alt={title} />
+      <Image src={homeintro} width={600} height={450} alt={title} />
     </div>
-
     <div class="home-intro-text">
       <h2>{title}</h2>
       <p>{text}</p>

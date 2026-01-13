@@ -1,4 +1,17 @@
-<footer class="footer">
+---
+import footerbg from "../assets/images/footer_bg.jpg";
+import { Image } from "astro:assets";
+---
+
+<footer class="footer" style={{ backgroundImage: `url(${footerbg})` }}>
+  <Image
+    src={footerbg}
+    alt=""
+    class="footer-bg"
+    loading="eager"
+    decoding="async"
+    priority
+  />
   <div class="overlay"></div>
 
   <div class="container">
@@ -56,9 +69,16 @@
  <style>
     .footer {
       position: relative;
-      background: url('src/assets/images/footer_bg.jpg') center / cover no-repeat;
       color: #fff;
       padding: 5rem 0 2rem;
+    }
+    .footer-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
     }
 
     .overlay {

@@ -2,13 +2,14 @@
 import MenuGrid from "../components//menu/MenuGrid.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
+import reservationBg from "../assets/images/bg-reservation.jpg";
 ---
 
 <BaseLayout title="Pizza Factory Menu">
   <Hero
     subtitle="Повеќе вкус за помалку"
     title="Нашето Мени"
-    backgroundImage="src/assets/images/bg-reservation.jpg"
+    image={reservationBg}
   />
   <MenuGrid title="Нашето Мени" />
 </BaseLayout>
