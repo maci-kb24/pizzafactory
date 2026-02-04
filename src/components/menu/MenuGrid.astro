@@ -4,10 +4,10 @@ import { menuItems } from "../../data/menu";
 const { title } = Astro.props;
 ---
 
-<section class="menu-grid">
+<section class="menu-grid" >
   <h2>{title}</h2>
   <div class="menu-items">
-    {
+    { 
       menuItems.flatMap((category) =>
         category.items.map((item, index) => (
           <MenuCard item={item} />
