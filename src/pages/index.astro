@@ -14,6 +14,7 @@ import capricciosa from "../assets/images/capricciosa.jpg";
 import homeintroimg from "../assets/images/left-image-home.webp";
 import homeBg from "../assets/images/bg-cover.jpg";
 import "../styles/global.css";
+import { menuHighlights } from "../data/menu";
 
 const { pageTitle } = Astro.props;
 ---
@@ -35,6 +36,7 @@ const { pageTitle } = Astro.props;
     image={homeintroimg}  
   />
   <MenuHighlights
+    title="Нашите Најдобри Пици"
     items={[
       {
         name: "Pizza Factory Пица",

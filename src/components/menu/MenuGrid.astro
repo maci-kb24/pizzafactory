@@ -4,30 +4,42 @@ import { menuItems } from "../../data/menu";
 const { title } = Astro.props;
 ---
 
-<section class="menu-grid" >
-  <h2>{title}</h2>
-  <div class="menu-items">
-    { 
-      menuItems.flatMap((category) =>
-        category.items.map((item, index) => (
-          <MenuCard item={item} />
+<section class="menu-grid">
+      {
+        menuItems.map((category) => (
+          <div class="menu-category">
+            <h2 class="menu-category-title">{category.category}</h2>
+            <div class="menu-items">
+              {category.items.map((item) => (
+                <MenuCard item={item} />
+              ))}
+            </div>
+          </div>
         ))
-      )
-    }
-  </div>
+      }
 </section>
 
 <style>
   .menu-items {
     display: grid;
-   grid-template-columns: 1fr 1fr 1fr;
-
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding:40px;
   }
 
   .menu-grid h2 {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #e5e5e5;
-    padding-bottom: 0.5rem;
+    /* margin-bottom: 1rem; */
+    /* border-bottom: 2px solid #e5e5e5; */
+    /* padding-bottom: 0.5rem; */
+  }
+  .menu-category-title {
+    color: #B1C3B9;
+    padding-left: 40px;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  .menu-category-title:nth-child(1) {
+    padding-top: 80px;
   }
 </style>
