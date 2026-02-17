@@ -4,20 +4,22 @@ import Hero from "../components/Hero.astro";
 import Container from "../components/Container.astro";
 import PromoSplit from "../components/PromoSplit.astro";
 import heroBg from "../assets/images/hero-menu.jpg";
+import pizzaBg from "../assets/images/pizza-bg.png";
+import reservationBg from "../assets/images/bg-reservation.jpg";
 ---
 
 <BaseLayout title="Pizza Factory Резервација">
   <Hero
     class="reservation-hero"
-    title="Направи  Резервација"
-    image={heroBg}
+    title="Направи Резервација"
+    image={reservationBg}
   />
   <section class="reservation">
     <Container>
       <div class="reservation-content">
         <div class="left-column">
           <div class="contact-info">
-            <h2>Нашата адреса</h2>
+            <h2>Адреса</h2>
             <p>
               Булевар Видое Смилевски Бато 3/2
             </p>
@@ -62,7 +64,7 @@ import heroBg from "../assets/images/hero-menu.jpg";
             <label for="requests">Специјални барања</label><br />
             <textarea
               rows="4"
-              cols="50"
+              cols="30"
               style="resize: none;"
               id="requests"
               name="requests"
@@ -73,8 +75,8 @@ import heroBg from "../assets/images/hero-menu.jpg";
         </div>
       </div>
       <PromoSplit
-        image="../src/assets/images/hero-menu.jpg"
-        pizzaBg="../src/assets/images/pizza-bg.png"
+        image={heroBg}
+        pizzaBg={pizzaBg.src}
         title="Достапна достава во реон Аеродром"
         headline="Уживајте во домашната атмосфера"
         description="Резервирајте маса во нашиот ресторан"
@@ -92,10 +94,16 @@ import heroBg from "../assets/images/hero-menu.jpg";
     padding: 0 1rem;
   }
   .reservation-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4rem;
+    
     margin: 7rem 0rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .reservation-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4rem;
+    }
   }
   .left-column {
     flex: 0.3;
@@ -106,8 +114,22 @@ import heroBg from "../assets/images/hero-menu.jpg";
   .contact-info {
     margin-bottom: 2rem;
   }
+  .contact-info h2 {
+    color: #B1C3B8;
+  }
+  .contact-info p {
+    font-size: 1.2rem;
+    color: #fff;
+  }
   .reservation-info {
     margin-bottom: 2rem;
+  }
+  .reservation-info h2 {
+    color: #B1C3B8;
+  }
+  .reservation-info p {
+    font-size: 1.2rem;
+    color: #fff;
   }
   .reservation-form {
     background-color: #f8f8f8;
