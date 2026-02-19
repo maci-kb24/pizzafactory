@@ -6,7 +6,7 @@ const price = item.price || 0;
 
 <article class="menu-card">
   <div class="content">
-    <h3>{item.name}</h3>
+    <h3><span>{item.name}</span></h3>
     <span class="price">{price} {item.currency}</span>
   </div>
   <div class="ingredients">
@@ -40,13 +40,41 @@ const price = item.price || 0;
   .menu-card .content {
     /* padding: 1.5rem; */
     display: flex;
+    position: relative;
+    z-index:0;
     justify-content: space-between;
   }
 
-  h3 {
+  .menu-card .content h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    width: (100% - 80px);
   }
+  .menu-card .content h3 > span {
+    background: #121618;
+    padding-right: 20px;
+  }
+  .menu-card .content .price {
+    width: 80px;
+    color: #b1c3b9;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: right;
+     background: #121618;
+  }
+  .menu-card .content .price::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom:40%;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #b1c3b9;
+    z-index: -1;
+  }
+
+   .menu-card .ingredients
 
   p {
     color: gray;
@@ -58,11 +86,5 @@ const price = item.price || 0;
     align-items: center;
     gap: 1.5rem;
     margin-top: 2rem;
-  }
-
-  .price {
-    color: #B1C3B9;
-    font-weight: 600;
-    font-size: 1.1rem;
   }
 </style>
